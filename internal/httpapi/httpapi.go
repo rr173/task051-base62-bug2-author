@@ -217,7 +217,7 @@ func (s *Server) handleAllocBatch(w http.ResponseWriter, r *http.Request) {
 		writeJSON(w, errStatus(err), allocBatchResponse{OK: false, Error: errText(err)})
 		return
 	}
-	writeJSON(w, http.StatusOK, allocBatchResponse{OK: true, Results: results[len(results):]})
+	writeJSON(w, http.StatusOK, allocBatchResponse{OK: true, Results: results})
 }
 
 // --- stats ---
